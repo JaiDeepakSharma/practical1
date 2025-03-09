@@ -2,6 +2,8 @@
 Vehicle mangament system
 # Vehicle Management System
 
+# Vehicle Management System
+
 ## Objectives
 After completing this project, you will be able to:
 
@@ -40,6 +42,9 @@ These define how the system should react to a particular set of inputs and what 
 - The system should allow users to book a vehicle for a specified period.
 - Users should be able to track vehicle availability in real time.
 - The system should generate billing invoices after rental completion.
+- The system should support vehicle maintenance tracking.
+- The system should manage driver assignments for vehicles.
+- Inventory items required for maintenance should be recorded and tracked.
 
 #### Non-Functional Requirements (NFRs)
 These describe constraints and behaviors of the system under certain conditions. Examples include:
@@ -47,6 +52,66 @@ These describe constraints and behaviors of the system under certain conditions.
 - **Product Requirements**: The system should have a user-friendly web interface with a mobile-friendly design.
 - **Performance Requirements**: The system should handle up to 1,000 concurrent users.
 - **Organizational Requirements**: The development process should comply with Agile methodology and industry standards.
+
+## Entity-Relationship (ER) Diagram Details
+The **Vehicle Management System** consists of several entities and their relationships:
+
+### **Entities and Attributes**
+# Vehicle Management System
+
+## Entities and Attributes
+
+### Vehicle
+- **Registration Number** (Primary Key)
+- **Model**
+- **Type** (Car, Truck, Bus, etc.)
+- **Fuel Type** (Petrol, Diesel, Electric, etc.)
+- **Usage Status** (Active, In Maintenance, Decommissioned)
+
+### Driver
+- **Driver ID** (Primary Key)
+- **Name**
+- **Badge Number**
+- **Age**
+- **Assigned Vehicle** (Foreign Key - Relationship: A driver is assigned to one vehicle)
+
+### Mechanic
+- **Mechanic ID** (Primary Key)
+- **Name**
+- **Rank**
+- **Specialization** (Engine, Transmission, Electrical, etc.)
+- **Assigned Vehicles** (Foreign Key - Relationship: A mechanic can be responsible for multiple vehicles)
+
+### Maintenance
+- **Work Order ID** (Primary Key)
+- **Vehicle Registration Number** (Foreign Key - Relationship: A work order is linked to a specific vehicle)
+- **Mechanic Assigned** (Foreign Key - Relationship: A work order is assigned to a specific mechanic)
+- **Maintenance Type** (Routine, Repair, Emergency, etc.)
+- **Status** (Pending, In Progress, Completed)
+
+### Inventory
+- **Item ID** (Primary Key)
+- **Item Name**
+- **Quantity Available**
+- **Used in Maintenance** (Foreign Key - Relationship: Inventory items are used for specific maintenance tasks)
+
+### Checks
+- **Check ID** (Primary Key)
+- **Performed by Mechanic** (Foreign Key - Relationship: Checks are performed by mechanics)
+- **Associated with a Vehicle** (Foreign Key - Relationship: Checks are conducted on specific vehicles)
+- **Inspection Date**
+- **Status** (Passed, Failed, Requires Attention)
+
+## Relationships
+1. **A vehicle is assigned to one driver, but a driver can have only one active vehicle at a time.**
+2. **A mechanic is responsible for multiple vehicles.**
+3. **A maintenance work order is linked to both a specific vehicle and a mechanic.**
+4. **Inventory items are consumed during maintenance.**
+5. **Mechanics perform routine checks on vehicles, which determine their maintenance needs.**
+
+This refined structure ensures clarity, normalization, and proper entity relationships within the Vehicle Management System. 🚗🔧📋
+
+
 
 ## Identifying Functional Requirements
 To identify functional requirements for the **Vehicle Management System**, consider the following:
@@ -57,11 +122,14 @@ To identify functional requirements for the **Vehicle Management System**, consi
    - Vehicle tracking
    - Payment processing
    - Report generation
+   - Maintenance tracking
+   - Driver assignments
+   - Inventory management
 
 2. **User-Centric Approach**:
    - A registered user should be able to search for available vehicles.
    - The system should notify users of upcoming rental expiration.
-   - Admins should have access to manage vehicle records.
+   - Admins should have access to manage vehicle records and maintenance schedules.
 
 3. **System as a Black Box**:
    - Inputs: User selects a vehicle and rental duration.
