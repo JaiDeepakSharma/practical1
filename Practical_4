@@ -1,0 +1,62 @@
+🚗 Motor Transport System - SEPM Practical
+📌 Aim
+To model a UML Use Case Diagram and capture use case scenarios for a Motor Transport System that automates transport request handling, driver and vehicle assignment, fuel tracking, and maintenance scheduling within an organization.
+________________________________________
+🧠 Introduction
+In organizations with a dedicated transport department, managing transport logistics manually is inefficient and prone to error. The Motor Transport System simplifies this by:
+•	Allowing employees to raise transport requests,
+•	Enabling transport officers to assign vehicles and drivers,
+•	Recording fuel usage, and
+•	Scheduling vehicle maintenance.
+This practical demonstrates software engineering principles like requirement gathering, system modeling, and documentation using UML diagrams.
+________________________________________
+📚 Theory
+➤ Objectives
+After completing this practical, you will be able to:
+•	Understand user interactions within the Motor Transport System.
+•	Develop a Use Case Diagram based on user roles and system functionality.
+•	Write detailed Use Case Scenarios for each actor.
+➤ Actors in the System
+Actor	Role Description
+Requester	Requests transport services.
+Transport Officer	Approves requests, assigns drivers & vehicles.
+Driver	Records fuel usage, executes assigned trips.
+Admin	Manages system maintenance and service scheduling.
+📝 Use Case Descriptions
+1. Request Transport
+Actor: Requester
+Description: User fills a form to request a vehicle for a particular date and time.
+2. Approve Request
+Actor: Transport Officer
+Description: Reviews and approves/rejects transport requests.
+3. Assign Driver
+Actor: Transport Officer
+Description: Assigns an available driver to the approved transport request.
+4. Assign Vehicle
+Actor: Transport Officer
+Description: Assigns an available and suitable vehicle.
+5. Record Fuel Usage
+Actor: Driver
+Description: Logs fuel consumption for each trip taken.
+6. Schedule Maintenance
+Actor: Admin
+Description: Schedules regular maintenance for all vehicles.
+7. Generate Reports
+Actor: Transport Officer
+Description: Generates usage and maintenance reports for review.
+________________________________________
+🧪 Case Study
+Let’s consider a real-world scenario:
+•	Mr. Rahul (Requester) submits a request for a car on April 20 for a client meeting.
+•	Ms. Priya (Transport Officer) approves the request, assigns Driver Arjun and Vehicle TN09AB1234.
+•	Driver Arjun completes the trip, records fuel usage.
+•	Admin Ravi schedules the vehicle for periodic maintenance.
+•	Ms. Priya generates a monthly usage report.
+________________________________________
+✅ Conclusion
+By completing this practical, students understand how to:
+•	Identify system requirements from real-world needs.
+•	Model system interaction using UML Use Case Diagrams.
+•	Clearly define and document actor interactions through use case scenarios.
+This helps lay a strong foundation for software requirement analysis and design in larger software engineering projects.
+
